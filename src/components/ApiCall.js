@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import ShowData from "./ShowData";
+import "./css/apicall.css";
+import WaitingMessage from "./WaitingMessage";
 
 export default function ApiCall({ setApiData, date, source, destination }) {
-  const [price, setPrice] = useState(0);
+  const [price, setPrice] = useState();
   const [flightName, setFlightName] = useState("");
   const [time, setTime] = useState("");
+  const [satisfy, setSatisfy] = useState(false);
+
   function handleSearch() {
     fetch(
       `https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/IN/INR/en-US/${source}-sky/${destination}-sky/${date}`,
@@ -29,6 +33,8 @@ export default function ApiCall({ setApiData, date, source, destination }) {
         setApiData(data);
         setTime(data.Quotes[0].OutboundLeg.DepartureDate);
         // console.log(data.Quotes[0].OutboundLeg.DepartureDate);
+
+        setSatisfy(true);
       })
       .catch((err) => {
         console.error(err);
@@ -36,15 +42,23 @@ export default function ApiCall({ setApiData, date, source, destination }) {
   }
 
   return (
-    <div>
-      <button onClick={handleSearch}>Search</button>
-      <ShowData
-        source={source}
-        destination={destination}
-        price={price}
-        flightName={flightName}
-        time={time}
-      />
+    <div className="api-call">
+      <div className="search">
+        <button id="btn" onClick={handleSearch}>
+          Search Flight
+        </button>
+      </div>
+      <div className="show-data">
+        {satisfy ? (
+          <ShowData
+            source={source}
+            destination={destination}
+            price={price}
+            flightName={flightName}
+            time={time}
+          />
+        ) : <WaitingMessage />}
+      </div>
     </div>
   );
 }

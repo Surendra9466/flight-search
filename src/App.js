@@ -1,9 +1,10 @@
-import react, { useEffect, useState } from "react";
+import react, { useState } from "react";
 import ApiCall from "./components/ApiCall";
 import Cities from "./components/Cities";
-import City from "./components/City";
+// import City from "./components/City";
 import Date from "./components/Date";
 import Visit from "./components/Visit";
+import './App.css'
 
 const App = () => {
   const [apiData, setApiData] = useState(); // city names
@@ -16,8 +17,8 @@ const App = () => {
   // console.log(source);
   // console.log(destination);
   return (
-    <div>
-      <h1>hi</h1>
+    <div className="main_app">
+      <h1 id="heading">Flight Search Service</h1>
       <Cities setCitiesName={setCitiesName} citiesName={citiesName} />
       <Visit citiesName={citiesName}  setSource={setSource} setDestination={setDestination}/>
       <Date setDate={setDate} />

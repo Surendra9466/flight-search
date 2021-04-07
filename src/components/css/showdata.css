@@ -1,0 +1,36 @@
+.show-data{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight:lighter;
+}
+
+.city-data{
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-around;
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+.flight-name{
+    /* background-color: red; */
+    /* margin: 0 auto; */
+    text-align: center;
+    /* font-size: 10px; */
+}
+
+.other-data{
+    background-color: rgba(228, 55, 55, 0.829);
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#price{
+    background-color: #4CAF50;
+    padding: 10px;
+    border-radius: 8px;
+
+}
+#main-name{
+    font-size: 40px;
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import "./css/city.css";
 
 export default function City({ citiesName, setDestination, setSource, name }) {
   // console.log(citiesName);
@@ -13,11 +14,17 @@ export default function City({ citiesName, setDestination, setSource, name }) {
     }
   }
   return (
-    <div>
-      <input onChange={handleClick} autoComplete="on" list="suggestions" />
+    <div className="city">
+      <input
+        id="city-input"
+        placeholder={`Enter ${name} place`}
+        onChange={handleClick}
+        autoComplete="on"
+        list="suggestions"
+      />
 
       {/* <h1>I m in City component</h1> */}
-      <datalist id="suggestions" >
+      <datalist id="suggestions">
         {citiesName.map((city, index) => {
           return <option value={city.cityCode}>{city.cityName}</option>;
         })}

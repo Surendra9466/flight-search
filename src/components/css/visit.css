@@ -1,0 +1,9 @@
+.visit {
+  display: flex;
+  /* background-color: grey; */
+  font-family: "Courier New", Courier, monospace;
+  padding: 20px;
+  justify-content: space-around;
+  /* border: none; */
+
+}

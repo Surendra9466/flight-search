@@ -1,0 +1,10 @@
+#city-input {
+  /* border: none; */
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 255, 0.835);
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 8px;
+}

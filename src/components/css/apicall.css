@@ -1,0 +1,26 @@
+/* .api-call {
+  background-color: ;
+} */
+.search {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 50%;
+  font-family: 'Courier New', Courier, monospace;
+
+}
+#btn {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 12px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius:7px ;       
+  font-size:18px ;
+  margin-top: 30px;
+}
